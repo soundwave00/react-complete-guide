@@ -1,6 +1,7 @@
-import Expense from "./components/Expenses";
+import React from "react";
+import Expenses from "./components/Expenses/Expenses";
 
-function App() {
+const App = () => {
     /*Così è come viene fatto su javascript    
   const para = document.createElement('p');
   para.textContent = 'This is also visible';
@@ -32,11 +33,19 @@ function App() {
         },
     ];
 
+    //può avere anche questa struttura utilizzando React.createElement
+    /*     return React.createElement(
+        "div",
+        {},
+        React.createElement("h2", {}, "Let's get started!"),
+        React.createElement(Expenses, {items: expenses})
+    ); */
+
     return (
         <div>
             <h2>Let's get started!</h2>
             <p>This is also visible!</p>
-            <Expense items={expenses}/>
+            <Expenses items={expenses} />
         </div>
     );
 }
