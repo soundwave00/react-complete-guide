@@ -1,4 +1,6 @@
 import React from "react";
+
+import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
 
 const App = () => {
@@ -33,6 +35,11 @@ const App = () => {
         },
     ];
 
+    const addExpenseHandler = expense => {
+        console.log('in app.js');
+        console.log(expense);
+    }
+
     //può avere anche questa struttura utilizzando React.createElement
     /*     return React.createElement(
         "div",
@@ -43,8 +50,7 @@ const App = () => {
 
     return (
         <div>
-            <h2>Let's get started!</h2>
-            <p>This is also visible!</p>
+            <NewExpense onAddExpense={ addExpenseHandler }/>
             <Expenses items={expenses} />
         </div>
     );
